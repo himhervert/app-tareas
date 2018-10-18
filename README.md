@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+class Tarea {
+    id: number;
+    titulo: string;
+    completada: boolean;
+    constructor(valores: Object = {}){
+        Object.assign(this,valores);
+    }
+}
+
+cosas que se utilizan tambien,
+let
+const
+const tarea = new Tarea({
+    titulo: 'Terminar el API',
+    completada: false
+});
+
+------------------------
+|      TypeScript      |
+|  -----------------   |
+|  |      ES6       |  |
+|  |  ------------  |  |
+|  |  |  ES5     |  |  |
+|__|__|__________|__|__|
