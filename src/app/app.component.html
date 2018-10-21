@@ -8,9 +8,9 @@
   textoTarea.value = ''
   ">
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let tarea of tareas">
+    <li class="list-group-item" *ngFor="let tarea of tareas; let i = index">
       <div class="form-check">
-        <input (click) ="actualizaTareasCompletadas()" [checked]="tarea.completada" type="checkbox" class="form-check-input">
+        <input type="checkbox" class="form-check-input" [checked]="tarea.completada" (click)="tareaCompleta(i)">
         <label class="form-check-label">{{ tarea.titulo }}</label>
         <button class="close" type="button" (click)="eliminarTarea(tarea.id)">&times;</button>
       </div>
@@ -22,8 +22,8 @@
     <span class="badge badge-danger">{{ tareas.length }}</span>
     Tareas pendientes
   </p>
-  <p *ngIf="actualizaTareasCompletadas() > 0">
-    <span class="badge badge-primary">{{ actualizaTareasCompletadas() }}</span>
+  <p *ngIf="tareasCompletas() > 0">
+    <span class="badge badge-primary">{{ tareasCompletas() }}</span>
     Tareas completadas
   </p>
 </div>
