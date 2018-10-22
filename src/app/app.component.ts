@@ -33,22 +33,21 @@ export class AppComponent {
     this.tareas.push(tareaNueva);
   }
 
-  tareaCompleta(idTarea: number) {
-    if (this.tareas[idTarea].completada) {
-      this.tareas[idTarea].completada = false;
-    }
-    else {
-      this.tareas[idTarea].completada = true;
+  toggleTarea(idTarea: number) {
+    for (const tarea of this.tareas) {
+      if (tarea.id === idTarea) {
+        tarea.completada = !tarea.completada;
+        break;
+      }
     }
   }
-
   eliminarTarea(idTarea: number) {
     this.tareas = this.tareas.filter(function (tarea) {
       return tarea.id !== idTarea;
     });
   }
 
-  tareasCompletas() {
+  tareasCompletadas(): number {
     return this.tareas.filter(function (tarea) {
       return tarea.completada === true;
     }).length;

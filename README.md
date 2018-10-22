@@ -44,10 +44,50 @@ const tarea = new Tarea({
     completada: false
 });
 
-------------------------
-|      TypeScript      |
-|  -----------------   |
-|  |      ES6       |  |
-|  |  ------------  |  |
-|  |  |  ES5     |  |  |
-|__|__|__________|__|__|
+    ------------------------
+    |      TypeScript      |
+    |  -----------------   |
+    |  |      ES6       |  |
+    |  |  ------------  |  |
+    |  |  |   ES5    |  |  |
+    |__|__|__________|__|__|
+
+Arquitectura Basada en Módulos.
+
+
+            Template  
+            |       A
+    (evento)|       | {{Propiedad}}
+            |       |
+            v       |
+            Componente 
+            class{  }
+
+{{  }} - Propiedad del componente.
+
+[   ] - Se utilizan para obtener la propiedad de un elemento del DOM.
+
+### Directivas
+
+- ngIf
+- ngFor
+
+### Servicios
+
+- Inyección de dependencias(DI).
+- 
+
+
+Template de AppComponent
+
+    <app-header></app-header>
+    <app-lista></app-lista>
+    <app-footer></app-footer>
+
+Template de lista
+
+    <ul>
+        <li *ngFor="...">
+            <app-elemento></app-elemento>
+        </li>
+    </ul>
