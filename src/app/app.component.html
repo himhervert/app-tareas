@@ -19,14 +19,8 @@
     </li>
   </ul>
   <!--*ngFor="let tarea of tareas" ESto es un FOREACH-->
-
-  <p *ngIf="tareas.length > 0">
-    <span class="badge badge-danger">{{ tareas.length }}</span>
-    Tareas pendientes
-  </p>
-  <p *ngIf="tareasCompletadas() > 0">
-    <span class="badge badge-success">{{ tareasCompletadas() }}</span>
-    Completadas
-  </p>
-
+  <app-pie 
+  [totalTareas]="tareas.length"
+  [tareasCompletadas]="tareasCompletadas()"
+  ></app-pie>
 </div>
