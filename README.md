@@ -91,3 +91,21 @@ Template de lista
             <app-elemento></app-elemento>
         </li>
     </ul>
+
+### SPA (Single Page Application)
+
+## Componentes
+
+Crear componentes con:
+
+$ ng generate component encabezado
+$ ng generate component pie
+$ ng generate component cuerpo
+
+
+AppComponent
+
+* variables
+* EventEmitter
+* @ Output
+* @ Input
